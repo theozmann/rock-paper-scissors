@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            background-color: #333;;
+        }
+    </style>
 </head>
 <body>
     <script>
@@ -48,10 +53,14 @@
                 const round = playRound(playerSelection, computerSelection);
                 if (round === "You won this round!") {
                     playerPoint++;
+                    console.log(`Player: ${playerPoint}`);
+                    console.log(`Computer: ${computerPoint}`);
                     console.log("You won this round!");
                 }
                 else if (round ==="You lose!") {
                     computerPoint++;
+                    console.log(`Player: ${playerPoint}`);
+                    console.log(`Computer: ${computerPoint}`);
                     console.log("You lost this round!");
                 }
                 else {
