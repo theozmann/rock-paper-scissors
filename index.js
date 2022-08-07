@@ -1,7 +1,7 @@
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
-const results = document.querySelector(".results");
+const results = document.querySelector(".results-header");
 
 rock.addEventListener("click", () => {
   results.textContent = playRound("rock", getComputerChoice());
