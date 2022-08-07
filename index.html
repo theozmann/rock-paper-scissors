@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" defer></script>
     <style>
         body {
             background-color: #333;;
@@ -12,76 +14,25 @@
     </style>
 </head>
 <body>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
-    <script>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Rock Paper Scissors Shoot!</div>
+        </div>
+    </nav>
 
-        const rock = document.querySelector('.rock')
-        const paper = document.querySelector('.paper')
-        const scissors = document.querySelector('.scissors')
+    <section class="results">
+        <div class="container">
 
-        rock.addEventListener('click', () => {
-            console.log(playRound('rock', getComputerChoice()));
-        });
-        paper.addEventListener('click', () => {
-            console.log(playRound('paper', getComputerChoice()));
-        });
-        scissors.addEventListener('click', () => {
-            console.log(playRound('scissors', getComputerChoice()));
-        });
-        
+        </div>
+    </section>
 
-        function getComputerChoice() {
-            const numGen = Math.floor(Math.random()*3 + 1);
-            if (numGen === 1) {
-                return "rock";
-            } else if (numGen === 2) {
-                return "paper";
-            } else if (numGen === 3) {
-                return "scissors";
-            }
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            if (playerSelection === computerSelection) {
-                return "Tie!";
-            } 
-            else if (playerSelection === "rock" && computerSelection === "scissors" ||
-                     playerSelection === "paper" && computerSelection === "rock" ||
-                     playerSelection === "scissors" && computerSelection === "paper") {
-                        return "You won this round!";
-            }
-            else {
-                return "You lose!";
-            } 
-
-        }
-
-        function game() {
-            let playerPoint = 0;
-            let computerPoint = 0;
-
-            const playerSelection = getPlayerChoice();
-            const computerSelection = getComputerChoice();
-            const round = playRound(playerSelection, computerSelection);
-            if (round === "You won this round!") {
-                playerPoint++;
-                console.log(`Player: ${playerPoint}`);
-                console.log(`Computer: ${computerPoint}`);
-                console.log("You won this round!");
-            }
-            else if (round ==="You lose!") {
-                computerPoint++;
-                console.log(`Player: ${playerPoint}`);
-                console.log(`Computer: ${computerPoint}`);
-                console.log("You lost this round!");
-            }
-            else {
-                console.log("Tie!");
-            }
-        }
-
-    </script>
+    <section class="buttons">
+        <div class="container">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
+        </div>
+    </section>
+    
 </body>
 </html>
