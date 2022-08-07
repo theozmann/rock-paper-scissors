@@ -47,41 +47,25 @@
         function game() {
             let playerPoint = 0;
             let computerPoint = 0;
-            for (let i = 0; i < 5; i++) {
-                const playerSelection = getPlayerChoice();
-                const computerSelection = getComputerChoice();
-                const round = playRound(playerSelection, computerSelection);
-                if (round === "You won this round!") {
-                    playerPoint++;
-                    console.log(`Player: ${playerPoint}`);
-                    console.log(`Computer: ${computerPoint}`);
-                    console.log("You won this round!");
-                }
-                else if (round ==="You lose!") {
-                    computerPoint++;
-                    console.log(`Player: ${playerPoint}`);
-                    console.log(`Computer: ${computerPoint}`);
-                    console.log("You lost this round!");
-                }
-                else {
-                    console.log("Tie!");
-                }
-            }
 
-            console.log(`Final Player Total: ${playerPoint}`);
-            console.log(`Final Computer Total: ${computerPoint}`);
-            
-            if (playerPoint > computerPoint) {
-                console.log("You won the game!");
-            } 
-            else if (playerPoint < computerPoint) {
-                console.log("You lost the game!");
+            const playerSelection = getPlayerChoice();
+            const computerSelection = getComputerChoice();
+            const round = playRound(playerSelection, computerSelection);
+            if (round === "You won this round!") {
+                playerPoint++;
+                console.log(`Player: ${playerPoint}`);
+                console.log(`Computer: ${computerPoint}`);
+                console.log("You won this round!");
+            }
+            else if (round ==="You lose!") {
+                computerPoint++;
+                console.log(`Player: ${playerPoint}`);
+                console.log(`Computer: ${computerPoint}`);
+                console.log("You lost this round!");
             }
             else {
-                console.log("Tie game!");
+                console.log("Tie!");
             }
-
-        }
 
         game();
  
