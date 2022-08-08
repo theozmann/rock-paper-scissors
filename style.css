@@ -3,3 +3,95 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    font-family: 'Righteous', sans-serif;
+    background-color: #203354;
+    font-size: 16px;
+    list-style: 1.5;
+    color: #eee;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.navbar {
+    font-family: 'Permanent Marker', sans-serif;
+    background-color: #192841;
+    color: white;
+    height: 100px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar .logo {
+    font-size: 40px;
+}
+
+.results {
+    padding: 30px;
+    font-size: 20px;
+    height: 300px;
+}
+
+.results-header {
+    height: 75px;
+}
+
+.results .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.results .scores {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 150px;
+}
+
+.player-score,
+.computer-score {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.buttons .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.buttons button {
+    font-size: 20px;
+    font-family: 'Righteous', sans-serif;
+    margin-top: 15px;
+    height: 100px;
+    width: 120px;
+    color: #eee;
+    background-color: #192841;
+    border: 1px solid #eee;
+    border-radius: 15px;
+}
+
+.buttons button:hover {
+    cursor: pointer;
+    transform: translate(-5px, -5px);
+    box-shadow: 5px 5px 3px #192841;
+}
