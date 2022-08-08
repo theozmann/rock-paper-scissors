@@ -2,15 +2,22 @@ const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
 const results = document.querySelector(".results-header");
+const playerPoint = document.querySelector(".player-point");
+const computerPoint = document.querySelector(".computer-point");
+let playerPointNum = parseInt(playerPoint.textContent, 10);
+let computerPointNum = parseInt(computerPoint.textContent, 10);
 
 rock.addEventListener("click", () => {
   results.textContent = playRound("rock", getComputerChoice());
+  checkTotals();
 });
 paper.addEventListener("click", () => {
   results.textContent = playRound("paper", getComputerChoice());
+  checkTotals();
 });
 scissors.addEventListener("click", () => {
   results.textContent = playRound("scissors", getComputerChoice());
+  checkTotals();
 });
 
 function getComputerChoice() {
@@ -32,30 +39,32 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "rock") ||
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
+    playerPointNum += 1;
+    playerPoint.textContent = playerPointNum;
     return "You won this round!";
   } else {
+    computerPointNum += 1;
+    computerPoint.textContent = computerPointNum;
     return "You lose!";
   }
 }
 
-function game() {
-  let playerPoint = 0;
-  let computerPoint = 0;
-
-  const playerSelection = getPlayerChoice();
-  const computerSelection = getComputerChoice();
-  const round = playRound(playerSelection, computerSelection);
-  if (round === "You won this round!") {
-    playerPoint++;
-    console.log(`Player: ${playerPoint}`);
-    console.log(`Computer: ${computerPoint}`);
-    console.log("You won this round!");
-  } else if (round === "You lose!") {
-    computerPoint++;
-    console.log(`Player: ${playerPoint}`);
-    console.log(`Computer: ${computerPoint}`);
-    console.log("You lost this round!");
-  } else {
-    console.log("Tie!");
+function checkTotals() {
+  if (playerPointNum === 5) {
+    results.textContent = "You won the game!";
+    disableButtons();
+  } else if (computerPointNum === 5) {
+    results.textContent = "You lost the game!";
+    disableButtons();
   }
+}
+
+function disableButtons() {
+  const rockButton = document.querySelector(".rock").disabled = true;
+  const paperButton = document.querySelector(".paper").disabled = true;
+  const scissorsButton = document.querySelector(".scissors").disabled = true;
+}
+
+function playAgain() {
+  const resetButton = document.createElement('button');
 }
