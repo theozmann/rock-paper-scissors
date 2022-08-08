@@ -6,6 +6,7 @@ const playerPoint = document.querySelector(".player-point");
 const computerPoint = document.querySelector(".computer-point");
 let playerPointNum = parseInt(playerPoint.textContent, 10);
 let computerPointNum = parseInt(computerPoint.textContent, 10);
+let andrewTwoHourFart = new Audio('2HourFartShort.mp3');
 
 rock.addEventListener("click", () => {
   results.textContent = playRound("rock", getComputerChoice());
@@ -53,9 +54,11 @@ function checkTotals() {
   if (playerPointNum === 5) {
     results.textContent = "You won the game!";
     disableButtons();
+    andrewTwoHourFart.play();
   } else if (computerPointNum === 5) {
     results.textContent = "You lost the game!";
     disableButtons();
+    andrewTwoHourFart.play();
   }
 }
 
