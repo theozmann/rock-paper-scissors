@@ -6,7 +6,7 @@ const playerPoint = document.querySelector(".player-point");
 const computerPoint = document.querySelector(".computer-point");
 let playerPointNum = parseInt(playerPoint.textContent, 10);
 let computerPointNum = parseInt(computerPoint.textContent, 10);
-let andrewTwoHourFart = new Audio('../audio/2HourFartShort.mp3');
+let andrewTwoHourFart = new Audio('2HourFartShort.mp3');
 
 rock.addEventListener("click", () => {
   results.textContent = playRound("rock", getComputerChoice());
