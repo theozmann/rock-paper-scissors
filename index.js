@@ -4,6 +4,7 @@ const scissors = document.querySelector(".scissors");
 const results = document.querySelector(".results-header");
 const playerPoint = document.querySelector(".player-point");
 const computerPoint = document.querySelector(".computer-point");
+const replay = document.querySelector(".try-again");
 let playerPointNum = parseInt(playerPoint.textContent, 10);
 let computerPointNum = parseInt(computerPoint.textContent, 10);
 let andrewTwoHourFart = new Audio('2HourFartShort.mp3');
@@ -11,14 +12,17 @@ let andrewTwoHourFart = new Audio('2HourFartShort.mp3');
 rock.addEventListener("click", () => {
   results.textContent = playRound("rock", getComputerChoice());
   checkTotals();
+  
 });
 paper.addEventListener("click", () => {
   results.textContent = playRound("paper", getComputerChoice());
   checkTotals();
+  
 });
 scissors.addEventListener("click", () => {
   results.textContent = playRound("scissors", getComputerChoice());
   checkTotals();
+  
 });
 
 function getComputerChoice() {
@@ -46,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
   } else {
     computerPointNum += 1;
     computerPoint.textContent = computerPointNum;
-    return "You lose!";
+    return "You lose this round!";
   }
 }
 
@@ -55,10 +59,13 @@ function checkTotals() {
     results.textContent = "You won the game!";
     disableButtons();
     andrewTwoHourFart.play();
+    playAgain();
+
   } else if (computerPointNum === 5) {
     results.textContent = "You lost the game!";
     disableButtons();
     andrewTwoHourFart.play();
+    playAgain();
   }
 }
 
@@ -70,4 +77,10 @@ function disableButtons() {
 
 function playAgain() {
   const resetButton = document.createElement('button');
+  resetButton.textContent = 'Play again?';
+  resetButton.classList.add('replay-button');
+  replay.appendChild(resetButton);
+  resetButton.addEventListener('click', () => {
+    window.location.reload();
+  });
 }
