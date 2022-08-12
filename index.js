@@ -46,11 +46,11 @@ function playRound(playerSelection, computerSelection) {
   ) {
     playerPointNum += 1;
     playerPoint.textContent = playerPointNum;
-    return "You won this round!";
+    return `Congrats! ${playerSelection} beats ${computerSelection}! You won this round!`;
   } else {
     computerPointNum += 1;
     computerPoint.textContent = computerPointNum;
-    return "You lose this round!";
+    return `Sorry! ${computerSelection} beats ${playerSelection}! You lose this round!`;
   }
 }
 
